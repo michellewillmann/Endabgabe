@@ -1,0 +1,32 @@
+body {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    display: grid;
+    grid-template-columns: max-content;
+    grid-template-rows: max-content;
+    border-width: 0.7em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+fieldset {
+    margin-right: 2px;
+    margin-left: 2px;
+    border-width: 0.5cm;
+    border-color: black;
+    font-size: 1em;
+    padding: 0.5em;
+}
+
+#resetButton #saveButton #deleteButton {
+    width: 3em;
+    height: 1.5em;
+    border: black;
+    border-radius: 3px;   
+}
+
+canvas{
+    margin-left: 40em;
+}
+infoSpace {
+    margin-right: 40em;
+}

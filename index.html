@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial.scale=1.0">
+    <title>Endabgabe: Feuerwerk</title>
+    <link rel="sytlesheet" href="style.css" type="text/css" media="screen" />
+    <script src="Client.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Feuerwerk</h1>
+        <p>Erstelle hier dein eignes Feuerwerk!</p>
+    </header>
+
+    <div id="infoSpace">
+
+    <fieldset id="sizeOfFirework">
+        <legend>Explosiongröße </legend>
+        <input type="radio" name="Size" id="small" value="small" checked/>
+        <label for="small">small</label>
+        <input type="radio" name="Size" id="medium" value="medium" checked/>
+        <label for="medium">medium</label>
+        <input type="radio" name="Size" id="big" value="big" checked/>
+        <label for="big">big</label>
+    </fieldset>
+
+    <fieldset id="particelAmount">
+        <legend>Partikelanzahl</legend>
+        <input type="number" name="Amount" class="amount" min="20" max="300" step="10" value="20"/>
+    </fieldset>
+
+    <fieldset id="colorOfRocket">
+        <input type="color" name="Color" id="color" value="#00ffe5">
+        <legend>Color</legend>
+    </fieldset>
+
+    <fieldset id="formsOfFirework">
+        <legend>Formen</legend>
+        <label for="select-form">Wähle eine Form</label>
+        <select name="Formen" id="select-form">
+        <option value=""></option>
+        <option value="round">Rund</option>
+        <option value="star">Stern</option> 
+        <option value="standard">Standard</option>
+        <option value="heart">Herz</option>
+        </select>
+    </fieldset>
+
+    <fieldset id="duration">
+        <legend>Dauer des Feuerwerks</legend>
+        <span> 
+            5sek.
+            <input type="range" name="Duration" id="duration" min="5" max="20" step="3" value="5">
+            20sek.
+        </span>
+    </fieldset>
+
+    <div id="buttonSpace">
+        <button id="showButton">show</button>
+        <button id="updateButton">update</button>
+    </div>
+    </div>
+
+    <div id="canvasSpace">
+        <canvas id="canvas" width="625" height="425" style="background: url(schwarzer_himmel.jpg)"></canvas>
+    </div>
+
+    <div id="containerAll">
+        <h2> Mometane Rakete</h2>
+
+        <div id="yourOrder"></div>
+    
+        <div id="buttonSpace2">
+            <button id="saveButton" type="button" form="orderForm">Save</button>
+            <button id="resetButton">Reset</button>
+            <button id="deleteButton">Delete</button>
+
+            <div id="dropUp">
+                <button id="dropButton">show Rockets</button>
+                <div id="dropupContent"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
