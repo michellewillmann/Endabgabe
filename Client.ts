@@ -1,4 +1,4 @@
-namespace Endabgabe_WiSe20_21_EIA2 {
+namespace endabgabe_WiSe {
     window.addEventListener("load",handleLoad);
     
     let crc2:CanvasRenderingContext2D;
