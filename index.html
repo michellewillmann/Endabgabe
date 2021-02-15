@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial.scale=1.0">
     <title>Endabgabe: Feuerwerk</title>
     <link rel="sytlesheet" href="style.css" type="text/css" media="screen" />
-    <script src="Client.js" type="text/javascript" charset="utf-8"></script>
+    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+
 </head>
 
 <body>
@@ -16,6 +17,12 @@
     </header>
 
     <div id="infoSpace">
+        <form method="GET">
+            <div id="allComponents">
+    <fieldset>
+        <legend> Name deiner Rakete</legend>
+        <input type="text" name="Name" id="name" placeholder="" required/>
+    </fieldset>
 
     <fieldset id="sizeOfFirework">
         <legend>Explosiongröße </legend>
@@ -52,15 +59,17 @@
     <fieldset id="duration">
         <legend>Dauer des Feuerwerks</legend>
         <span> 
-            5sek.
+            5s
             <input type="range" name="Duration" id="duration" min="5" max="20" step="3" value="5">
-            20sek.
+            20s
         </span>
     </fieldset>
+    </div>
+    </form>
 
-    <div id="buttonSpace">
-        <button id="showButton">show</button>
-        <button id="updateButton">update</button>
+    <div id="buttonSpace1">
+        <button id="showButton">show Rocket</button>
+        <button id="updateButton">update Rocket</button>
     </div>
     </div>
 
@@ -68,18 +77,18 @@
         <canvas id="canvas" width="625" height="425" style="background: url(schwarzer_himmel.jpg)"></canvas>
     </div>
 
-    <div id="containerAll">
+    <div id="compilationContainer">
         <h2> Mometane Rakete</h2>
 
-        <div id="yourOrder"></div>
+        <div id="yourRocket"></div>
     
         <div id="buttonSpace2">
-            <button id="saveButton" type="button" form="orderForm">Save</button>
-            <button id="resetButton">Reset</button>
-            <button id="deleteButton">Delete</button>
+            <button id="saveButton" type="button" form="orderForm">save Rocket</button>
+            <button id="resetButton">reset Rocket</button>
+            <button id="deleteButton">delete Rocket</button>
 
             <div id="dropUp">
-                <button id="dropButton">show Rockets</button>
+                <button id="dropButton">show All Rockets</button>
                 <div id="dropupContent"></div>
             </div>
         </div>
