@@ -2,15 +2,21 @@
     "name": "feuerwerk",
     "version": "1.0.0",
     "description": "",
-    "main": "main.js",
+    "main": "Server.js",
     
 "scripts": {
-  "start": "node Server/Server.js"
+  "start": "node Server.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michellewillmann/endabgabe.git"
+  },
+  "author": "michelle",
   "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^14.14.25"
-  },
-  "dependencies": {}
+
+  "devDependencies": {},
+  "dependencies": {
+    "@types/mongodb": "^3.5.34",
+    "mongodb": "^3.6.3"
+  }
 }

@@ -18,7 +18,7 @@ namespace endabgabe {
             particle.arc(0, 0, radiusPartcile, 0, 2 + Math.PI);
            crc2.beginPath();
            crc2.fillStyle=_color;
-           crc2.arc(this.position.x,this.position.y,)
+           crc2.arc(this.position.x, this.position.y,)
 
     }
 }}

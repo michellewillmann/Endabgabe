@@ -7,21 +7,21 @@ var endabgabe;
         }
         Star.prototype.drawStars = function () {
             var stars = 1000;
-            var radiusPartcile = 0.5;
+            var radiusParticle = 0.5;
             var particle = new Path2D();
-            particle.arc(0, 0, radiusPartcile, 0, 2 + Math.PI);
-            crc2.save();
-            crc2.translate(this.position.x, this.position.y);
-            crc2.fillStyle = "white";
+            particle.arc(0, 0, radiusParticle, 0, 2 * Math.PI);
+            endabgabe.crc2.save();
+            endabgabe.crc2.translate(this.position.x, this.position.y);
+            endabgabe.crc2.fillStyle = "white";
             for (var drawn = 0; drawn < stars; drawn++) {
-                crc2.save();
+                endabgabe.crc2.save();
                 var x = (Math.random() - 0.5) * this.size.x;
                 var y = (Math.random() - 0.5) * this.size.y;
-                crc2.translate(x, y);
-                crc2.fill(particle);
-                crc2.restore();
+                endabgabe.crc2.translate(x, y);
+                endabgabe.crc2.fill(particle);
+                endabgabe.crc2.restore();
             }
-            crc2.restore();
+            endabgabe.crc2.restore();
         };
         return Star;
     }());

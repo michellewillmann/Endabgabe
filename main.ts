@@ -1,6 +1,3 @@
-import { url } from "inspector";
-import { URLSearchParams } from "url";
-
 namespace endabgabe {
     window.addEventListener("load",handleLoad);
     
