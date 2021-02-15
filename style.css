@@ -1,5 +1,5 @@
 body {
-    color: white;
+    color: lightslategray;
     font-family: 'Times New Roman', Times, serif;
     font-size: 15px;
     display: grid;
@@ -8,7 +8,6 @@ body {
     border-width: 0.7em;
     margin-left: 2em;
     margin-right: 2em;
-    background-color:#e6d690;
 }
 title{
     font-size: 5em;
