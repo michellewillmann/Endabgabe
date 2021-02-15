@@ -36,7 +36,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var inspector_1 = require("inspector");
 var url_1 = require("url");
 var endabgabe;
 (function (endabgabe) {
@@ -56,167 +55,165 @@ var endabgabe;
         document.querySelector("dropButton").addEventListener("click", showAllRockets);
         document.querySelector("canvas").addEventListener("click", handleAnimate);
     }
-})(endabgabe || (endabgabe = {}));
-function showRocket() {
-    var allComponets = new FormData(document.forms[0]);
-    var rocket = "Name deiner Rakete:" + allComponets.get("Name") + "<br>" + "Explosionsgröße:" + allComponets.get("Size") + "<br>" + "Partikelanzahl:" + allComponets.get("Amount") + "<br>" + "Color:" + allComponets.get("Color") + "<br>" + "Formen:" + allComponets.get("Formen") + "<br>" + "Dauer des Feuerwerks:" + allComponets.get("Duration") + "s" + "<br>";
-    document.querySelector("div#yourRocket").innerHTML = rocket;
-}
-function updateRocket() {
-    return __awaiter(this, void 0, void 0, function () {
-        var newData, query, response, responseText;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    newData = new FormData(document.forms[0]);
-                    query = new url_1.URLSearchParams(newData);
-                    return [4 /*yield*/, fetch(inspector_1.url + "?" + "command=update&rocket=" + currentRocket + "&" + query.toString())];
-                case 1:
-                    response = _a.sent();
-                    return [4 /*yield*/, response.text()];
-                case 2:
-                    responseText = _a.sent();
-                    alert(responseText);
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-function resetRocket() {
-    document.forms[0].reset();
-    document.getElementById("yourRocket").innerHTML = "";
-}
-function saveRocket(_event) {
-    return __awaiter(this, void 0, void 0, function () {
-        var form, query, response, responseText;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    console.log("save Rocket");
-                    form = new FormData(document.forms[0]);
-                    query = new url_1.URLSearchParams(form);
-                    return [4 /*yield*/, fetch(inspector_1.url + "?" + query.toString())];
-                case 1:
-                    response = _a.sent();
-                    return [4 /*yield*/, response.text()];
-                case 2:
-                    responseText = _a.sent();
-                    alert(responseText);
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-function getSavedRocketsFromDb() {
-    return __awaiter(this, void 0, void 0, function () {
-        var response, _i, rockets_1, rocket, rocketName;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, fetch(inspector_1.url + "?" + "command=retrieve")];
-                case 1:
-                    response = _a.sent();
-                    return [4 /*yield*/, response.json()];
-                case 2:
-                    rockets = _a.sent();
-                    for (_i = 0, rockets_1 = rockets; _i < rockets_1.length; _i++) {
-                        rocket = rockets_1[_i];
-                        rocketName = document.createElement("a");
-                        rocketName.innerHTML = rocket["Name"];
-                        document.querySelector("div#dropupContent").appendChild(rocketName);
-                        rocketName.addEventListener("click", chooseRocket);
-                    }
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-function chooseRocket(_event) {
-    currentRocket = _event.target.innerHTML;
-    var parent = document.querySelector("div#dropupContent");
-    parent.style.display = "none";
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
+    function showRocket() {
+        var allComponets = new FormData(document.forms[0]);
+        var rocket = "Name deiner Rakete:" + allComponets.get("Name") + "<br>" + "Explosionsgröße:" + allComponets.get("Size") + "<br>" + "Partikelanzahl:" + allComponets.get("Amount") + "<br>" + "Color:" + allComponets.get("Color") + "<br>" + "Formen:" + allComponets.get("Formen") + "<br>" + "Dauer des Feuerwerks:" + allComponets.get("Duration") + "s" + "<br>";
+        document.querySelector("div#yourRocket").innerHTML = rocket;
     }
-    for (var _i = 0, rockets_2 = rockets; _i < rockets_2.length; _i++) {
-        var rocket = rockets_2[_i];
-        if (rocket["Name"] == currentRocket) {
-            document.querySelector("div#yourRocket").innerHTML = "Name:" + rocket["Name"] + "<br>" + "Explosionsgröße:" + rocket["Size"] + "<br>" + "Partikelanzahl:" + rocket["Amount"] + "<br>" + "Color:" + rocket["Color"] + "<br>" + "Formen:" + rocket["Formen"] + "<br>" + "Dauer des Feuerwerks:" + rocket["Duration"] + "s" + "<br>";
-            fillInputFields(rocket);
-        }
-    }
-    buttonClicked++;
-}
-function fillInputFields(rocket) {
-    document.querySelector("input#name").value = rocket["Name"];
-    document.querySelector("input#color").value = rocket["Color"];
-    document.querySelector("input#duration").value = rocket["Duration"];
-    document.querySelector("input#amount").value = rocket["Amount"];
-    document.querySelector("select#select-form").value = rocket["Formen"];
-    switch (rocket["Size"]) {
-        case "small":
-            document.querySelector("input#small").checked = true;
-            break;
-        case "medium":
-            document.querySelector("input#medium").checked = true;
-            break;
-        case "big":
-            document.querySelector("input#big").checked = true;
-            break;
-    }
-}
-function deleteRocket() {
-    return __awaiter(this, void 0, void 0, function () {
-        var response, text;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    console.log(currentRocket);
-                    return [4 /*yield*/, fetch(inspector_1.url + "?" + "command=delete&rocket=" + currentRocket)];
-                case 1:
-                    response = _a.sent();
-                    return [4 /*yield*/, response.text()];
-                case 2:
-                    text = _a.sent();
-                    alert(text);
-                    document.querySelector("div#yourRocket").innerHTML = "";
-                    return [2 /*return*/];
-            }
+    function updateRocket() {
+        return __awaiter(this, void 0, void 0, function () {
+            var newData, query, response, responseText;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        newData = new FormData(document.forms[0]);
+                        query = new url_1.URLSearchParams(newData);
+                        return [4 /*yield*/, fetch(url + "?" + "command=update&rocket=" + currentRocket + "&" + query.toString())];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.text()];
+                    case 2:
+                        responseText = _a.sent();
+                        alert(responseText);
+                        return [2 /*return*/];
+                }
+            });
         });
-    });
-}
-function showAllRockets() {
-    var parent = document.querySelector("div#dropupContent");
-    if (buttonClicked % 2 == 0) {
-        getSavedRocketsFromDb();
-        parent.style.display = "block";
     }
-    else {
+    function resetRocket() {
+        document.forms[0].reset();
+        document.getElementById("yourRocket").innerHTML = "";
+    }
+    function saveRocket(_event) {
+        return __awaiter(this, void 0, void 0, function () {
+            var form, query, response, responseText;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        console.log("save Rocket");
+                        form = new FormData(document.forms[0]);
+                        query = new url_1.URLSearchParams(form);
+                        return [4 /*yield*/, fetch(url + "?" + query.toString())];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.text()];
+                    case 2:
+                        responseText = _a.sent();
+                        alert(responseText);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    }
+    function getSavedRocketsFromDb() {
+        return __awaiter(this, void 0, void 0, function () {
+            var response, _i, rockets_1, rocket, rocketName;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, fetch(url + "?" + "command=retrieve")];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.json()];
+                    case 2:
+                        rockets = _a.sent();
+                        for (_i = 0, rockets_1 = rockets; _i < rockets_1.length; _i++) {
+                            rocket = rockets_1[_i];
+                            rocketName = document.createElement("a");
+                            rocketName.innerHTML = rocket["Name"];
+                            document.querySelector("div#dropupContent").appendChild(rocketName);
+                            rocketName.addEventListener("click", chooseRocket);
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    }
+    function chooseRocket(_event) {
+        currentRocket = _event.target.innerHTML;
+        var parent = document.querySelector("div#dropupContent");
         parent.style.display = "none";
         while (parent.firstChild) {
             parent.removeChild(parent.firstChild);
         }
-    }
-    buttonClicked++;
-}
-function handleAnimate(_event) {
-    var cursorX = _event.pageX - document.querySelector("canvas").offsetLeft;
-    var cursorY = _event.pageY - document.querySelector("canvas").offsetTop;
-    var form = new FormData(document.forms[0]);
-    var color = form.get("Color");
-    var duration = Number(form.get("Duration")) * 1000;
-    var radius = 0;
-    var radiusEnde = Number(form.get("Radius")) * 10;
-    lightRay = new LightRay({ x: cursorX, y: cursorY }, color, radius, radiusEnde);
-    animate(radius, radiusEnde, duration);
-}
-function animate(radius, radiusEnde, duration) {
-    setTimeout(function () {
-        if (radius <= radiusEnde) {
-            console.log("Test");
-            lightRay.drawLightRays();
-            radius++;
-            animate(radius, radiusEnde, duration);
+        for (var _i = 0, rockets_2 = rockets; _i < rockets_2.length; _i++) {
+            var rocket = rockets_2[_i];
+            if (rocket["Name"] == currentRocket) {
+                document.querySelector("div#yourRocket").innerHTML = "Name:" + rocket["Name"] + "<br>" + "Explosionsgröße:" + rocket["Size"] + "<br>" + "Partikelanzahl:" + rocket["Amount"] + "<br>" + "Color:" + rocket["Color"] + "<br>" + "Formen:" + rocket["Formen"] + "<br>" + "Dauer des Feuerwerks:" + rocket["Duration"] + "s" + "<br>";
+                fillInputFields(rocket);
+            }
         }
-    }, duration / radiusEnde);
-}
+        buttonClicked++;
+    }
+    function fillInputFields(rocket) {
+        document.querySelector("input#name").value = rocket["Name"];
+        document.querySelector("input#color").value = rocket["Color"];
+        document.querySelector("input#duration").value = rocket["Duration"];
+        document.querySelector("input#amount").value = rocket["Amount"];
+        document.querySelector("select#select-form").value = rocket["Formen"];
+        switch (rocket["Size"]) {
+            case "small":
+                document.querySelector("input#small").checked = true;
+                break;
+            case "medium":
+                document.querySelector("input#medium").checked = true;
+                break;
+            case "big":
+                document.querySelector("input#big").checked = true;
+                break;
+        }
+    }
+    function deleteRocket() {
+        return __awaiter(this, void 0, void 0, function () {
+            var response, text;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        console.log(currentRocket);
+                        return [4 /*yield*/, fetch(url + "?" + "command=delete&rocket=" + currentRocket)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.text()];
+                    case 2:
+                        text = _a.sent();
+                        alert(text);
+                        document.querySelector("div#yourRocket").innerHTML = "";
+                        return [2 /*return*/];
+                }
+            });
+        });
+    }
+    function showAllRockets() {
+        var parent = document.querySelector("div#dropupContent");
+        if (buttonClicked % 2 == 0) {
+            getSavedRocketsFromDb();
+            parent.style.display = "block";
+        }
+        else {
+            parent.style.display = "none";
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+            }
+        }
+        buttonClicked++;
+    }
+    function handleAnimate(_event) {
+        var cursorX = _event.pageX - document.querySelector("canvas").offsetLeft;
+        var cursorY = _event.pageY - document.querySelector("canvas").offsetTop;
+        var form = new FormData(document.forms[0]);
+        var color = form.get("Color");
+        var duration = Number(form.get("Duration")) * 1000;
+        var radius = 0;
+        var radiusEnde = Number(form.get("Radius")) * 10;
+        animate(radius, radiusEnde, duration);
+    }
+    function animate(radius, radiusEnde, duration) {
+        setTimeout(function () {
+            if (radius <= radiusEnde) {
+                console.log("Test");
+                radius++;
+                animate(radius, radiusEnde, duration);
+            }
+        }, duration / radiusEnde);
+    }
+})(endabgabe || (endabgabe = {}));
 //# sourceMappingURL=main.js.map

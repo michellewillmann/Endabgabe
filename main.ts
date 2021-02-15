@@ -8,7 +8,6 @@ namespace endabgabe {
     let buttonClicked: number=0;
     let rockets: any;
     let currentRocket: string;
-    let lightRay: LightRay;
     export let crc2:CanvasRenderingContext2D;
     export let imageData: ImageData;
     
@@ -113,7 +112,7 @@ function showAllRockets():void{
 
     if(buttonClicked % 2 == 0){
         getSavedRocketsFromDb();
-        parent.style.display ="block",
+        parent.style.display ="block";
     }
     else {
         parent.style.display="none";
@@ -134,7 +133,6 @@ function handleAnimate(_event:MouseEvent):void{
     let duration:number= Number(form.get("Duration"))*1000;
     let radius:number=0;
     let radiusEnde: number=Number(form.get("Radius"))*10;
-    lightRay= new LightRay({x:cursorX,y:cursorY}, color,radius,radiusEnde);
     animate(radius, radiusEnde, duration);
 
 }
@@ -142,7 +140,6 @@ function animate(radius:number, radiusEnde:number, duration:number){
     setTimeout(function(){
         if(radius<= radiusEnde){
             console.log("Test");
-            lightRay.drawLightRays();
             radius ++;
             animate(radius, radiusEnde, duration);
         }
