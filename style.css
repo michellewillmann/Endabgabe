@@ -8,11 +8,12 @@ body {
     border-width: 0.7em;
     margin-left: 2em;
     margin-right: 2em;
+    background-color: bisque;
 }
 header{
-    grid-column:span 2 ;
     text-align: center;
 }
+
 fieldset {
     margin-right: 2px;
     margin-left: 2px;
@@ -42,6 +43,7 @@ canvas{
 #infoSpace {
     margin-left: 40em;
     margin-top: -45em;
+    text-align: left;
 }
 #compilationContainer{
     margin-left: 40em;

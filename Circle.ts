@@ -12,7 +12,7 @@ namespace endabgabe {
  
         }
         drawCircles(_color:string):void{
-            let circles: number();
+            let circles: number;
             let radiusPartcile: number=0.5;
             let particle: Path2D= new Path2D();
             particle.arc(0, 0, radiusPartcile, 0, 2 + Math.PI);

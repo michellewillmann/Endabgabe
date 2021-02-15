@@ -9,7 +9,6 @@ var endabgabe;
         }
         Circle.prototype.drawCircles = function (_color) {
             var circles;
-            ();
             var radiusPartcile = 0.5;
             var particle = new Path2D();
             particle.arc(0, 0, radiusPartcile, 0, 2 + Math.PI);
