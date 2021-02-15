@@ -2,7 +2,6 @@ var endabgabe;
 (function (endabgabe) {
     var Moveable = /** @class */ (function () {
         function Moveable(_position) {
-            this.expendable = false;
             if (_position)
                 this.position = _position.copy();
             else

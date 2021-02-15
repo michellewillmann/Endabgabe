@@ -2,8 +2,7 @@ namespace endabgabe{
     export class Moveable{
         public position:Vector;
         public velocity:Vector;
-        public expendable:boolean=false;
-
+        
         constructor(_position?:Vector){
             
             if(_position)
