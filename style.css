@@ -1,51 +1,70 @@
 body {
-    color: lightslategray;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 15px;
-    display: grid;
-    grid-template-columns: 50% auto;
-    grid-template-rows: auto auto;
-    border-width: 0.7em;
-    margin-left: 2em;
-    margin-right: 2em;
+    background-color: beige;
 }
+
 title{
     font-size: 5em;
-    font-family: cursive;
+    font-family: 'Merienda One', monospace;
+    font-weight: 100;
+}
+#buttonSpace1{
+    margin-left: 12em;
+}
+#buttonSpace2{
+    text-align: center;
+    margin-left: 40em;
+}
+h3{
+    margin-left: 46em;
+    font-family: 'Merienda One', monospace;
+    margin-bottom: 0em;
+}
+form{
+    margin-right: 30em;
 }
 header{
     text-align: center;
-}
-
-fieldset {
-    margin-right: 2px;
-    margin-left: 2px;
-    border-width: 0.5cm;
     border-color: black;
-    font-size: 1em;
-    padding: 0.5em;
+    border-style: solid;
 }
-
-#form{
-    border: solid grey;
-    margin: 1em;
-    margin-right: 40em;
+#infoSpace{
+    margin-right: 40em;   
 }
-
-p{
-    text-align: center;
+div#allComponents{
+    border-style: solid;
+    margin-top: 2em;
 }
-
 canvas{
-    margin-left: 40em;
+    margin-left: 39em;
+    height: 400px;
+    width: 600px;
+    margin-top: -24em;
 }
-
-#infoSpace {
-    margin-left: 40em;
-    margin-top: -45em;
-    text-align: left;
+fieldset{
+    margin-top: 1vh;
+	margin-left: 2vh;
+	margin-right: 2vh;
+	border-width: 3px;
+	border-color: #440808cf;
+	font-size: 0.8em;
+	padding: 0.8vh;
 }
-
-#compilationContainer{
-    margin-left: 40em;
+button{
+    margin-top: 1em;
+    font-size: 1em;
+    background-color:beige;
+    color: black;
+    padding: 8px;
+    border-color:#440808cf;
+    border-width: 5px;
+    font-family: 'Merienda One', monospace;
+}
+#resetButton{
+    margin-left: 1em;
+}
+#deleteButton{
+    margin-left: 1em;
+}
+fieldset#duration{
+    margin-bottom: 1em;
 }

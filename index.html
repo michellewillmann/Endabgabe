@@ -7,7 +7,7 @@
 
     <title>Endabgabe: Feuerwerk</title>
 
-    <link rel="sytlesheet"type="text/css" media="screen" href="style.css"  />
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
     <script src="main.js" type="text/javascript" charset="utf-8"></script>
     <script src="Star.js" type="text/javascript" charset="utf-8"></script>
     <script src="Vector.js" type="text/javascript" charset="utf-8"></script>
@@ -19,11 +19,11 @@
 
     <header>
         <h1>Feuerwerk</h1>
-        <p>Erstelle hier dein eignes Feuerwerk!</p>
+        <p>Erstelle hier dein eigenes Feuerwerk!</p>
     </header>
 
-    <div id="infoSpace">
-        <form method="GET">
+    <div>
+        <form id="infoSpace" method="GET">
             <div id="allComponents">
     <fieldset>
         <legend> Name deiner Rakete</legend>
@@ -47,7 +47,7 @@
 
     <fieldset id="colorOfRocket">
         <input type="color" name="Color" id="color" value="#00ffe5">
-        <legend>Color</legend>
+        <legend>Farbe</legend>
     </fieldset>
 
     <fieldset id="formsOfFirework">
@@ -78,10 +78,10 @@
     </div>
     </div>
 
-    <div id="canvasSpace">
+    <div>
+        <form id="canvasSpace">
         <canvas id="canvas" width="625" height="425" style="background: url(schwarzer_himmel.jpg)"></canvas>
     </div>
-
     <div id="compilationContainer">
         <h3> Mometane Rakete</h3>
         <div id="yourRocket"></div>
@@ -97,6 +97,7 @@
             </div>
         </div>
     </div>
+</form>
 
 </body>
 </html>
