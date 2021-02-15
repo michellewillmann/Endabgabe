@@ -8,7 +8,11 @@ body {
     border-width: 0.7em;
     margin-left: 2em;
     margin-right: 2em;
-    background-color: bisque;
+    background-color:#e6d690;
+}
+title{
+    font-size: 5em;
+    font-family: cursive;
 }
 header{
     text-align: center;
@@ -22,29 +26,27 @@ fieldset {
     font-size: 1em;
     padding: 0.5em;
 }
+
 #form{
     border: solid grey;
     margin: 1em;
     margin-right: 40em;
 }
+
 p{
     text-align: center;
-}
-#resetButton #saveButton #deleteButton {
-    width: 3em;
-    height: 1.5em;
-    border: black;
-    border-radius: 3px;   
 }
 
 canvas{
     margin-left: 40em;
 }
+
 #infoSpace {
     margin-left: 40em;
     margin-top: -45em;
     text-align: left;
 }
+
 #compilationContainer{
     margin-left: 40em;
 }
