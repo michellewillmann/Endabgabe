@@ -7,7 +7,7 @@ var endabgabe;
             this.position.y = _position.y;
             this.velocity = _velocity;
         }
-        Circle.prototype.drawCircles = function (_color, _particleRadius) {
+        Circle.prototype.draw = function (_color, _particleRadius) {
             var circles;
             var radiusPartcile = 0.5;
             var particle = new Path2D();
@@ -15,6 +15,7 @@ var endabgabe;
             endabgabe.crc2.beginPath();
             endabgabe.crc2.fillStyle = _color;
             endabgabe.crc2.arc(this.position.x, this.position.y, _particleRadius, 0, 2 * Math.PI);
+            endabgabe.crc2.fill();
         };
         return Circle;
     }());

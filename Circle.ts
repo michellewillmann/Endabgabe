@@ -13,7 +13,7 @@ namespace endabgabe {
             
  
         }
-        drawCircles(_color:string,_particleRadius):void{
+        public draw(_color:string,_particleRadius:number):void{
             let circles: number;
             let radiusPartcile: number=0.5;
             let particle: Path2D= new Path2D();
@@ -21,6 +21,6 @@ namespace endabgabe {
            crc2.beginPath();
            crc2.fillStyle=_color;
            crc2.arc(this.position.x, this.position.y,_particleRadius, 0, 2*Math.PI);
-
+           crc2.fill();
     }
 }}
