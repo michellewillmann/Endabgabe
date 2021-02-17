@@ -6,18 +6,12 @@ var endabgabe;
             this.y = y;
             this.color = color;
             this.velocity = velocity;
-            this.opacity = 1;
         }
-        Particel.prototype.draw = function () {
+        Particel.prototype.draw = function (_color, _particleRadius) {
         };
         Particel.prototype.move = function () {
-            this.draw();
-            this.velocity.x *= friction;
-            this.velocity.y *= friction;
-            this.velocity.y += gravity;
-            this.x += this.velocity.x;
-            this.y += this.velocity.y;
-            this.opacity -= 0.009;
+            this.velocity = endabgabe.Vector.getSum(this.velocity, new endabgabe.Vector(0, 0.01));
+            this.position = endabgabe.Vector.getSum(this.position, this.velocity);
         };
         return Particel;
     }());

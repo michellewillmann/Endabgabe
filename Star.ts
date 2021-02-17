@@ -1,12 +1,16 @@
 namespace endabgabe {
 
-    export class Star {
+    export class Star extends Moveable {
+        public draw(): void {
+            throw new Error("Method not implemented.");
+        }
 
         position: Vector;
         size: Vector;
 
 
         constructor(_position: Vector, _size: Vector) {
+            super();
             this.position = _position;
             this.size = _size;
         }

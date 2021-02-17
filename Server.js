@@ -43,7 +43,7 @@ var Mongo = require("mongodb");
 var endabgabe;
 (function (endabgabe) {
     var rocket;
-    var databaseUrl = "mongodb+srv://mcihellewillmann:hallo@cluster0.eivgu.mongodb.net/feuerwerk?retryWrites=true&w=majority";
+    var databaseUrl = "mongodb+srv://michellewillmann:hallo@cluster0.eivgu.mongodb.net/feuerwerk?retryWrites=true&w=majority";
     startServer();
     connectToDatabase(databaseUrl);
     function startServer() {
@@ -54,6 +54,7 @@ var endabgabe;
         server.listen(port);
         server.addListener("request", handleRequest);
     }
+    var db;
     function connectToDatabase(_url) {
         return __awaiter(this, void 0, void 0, function () {
             var options, mongoClient;

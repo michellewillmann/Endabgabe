@@ -10,7 +10,7 @@ export namespace endabgabe {
     }
 
     let rocket: Mongo.Collection;
-    let databaseUrl:string="mongodb+srv://mcihellewillmann:hallo@cluster0.eivgu.mongodb.net/feuerwerk?retryWrites=true&w=majority"
+    let databaseUrl:string="mongodb+srv://michellewillmann:hallo@cluster0.eivgu.mongodb.net/feuerwerk?retryWrites=true&w=majority"
     startServer();
     connectToDatabase(databaseUrl);
 
@@ -23,9 +23,12 @@ export namespace endabgabe {
         server.listen(port);
         server.addListener("request",handleRequest);
     }
+    let db:Mongo.Db;
     async function connectToDatabase(_url:string):Promise<void>{
+        
         let options: Mongo.MongoClientOptions ={ useNewUrlParser:true, useUnifedTopology:true};
         let mongoClient:Mongo.MongoClient= new Mongo.MongoClient(_url,options);
+
         await mongoClient.connect();
         rocket=mongoClient.db("feuerwerk").collection("rockets");
         console.log("database connected:"+ rocket);
