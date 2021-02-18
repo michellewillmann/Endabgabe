@@ -6,6 +6,12 @@ var endabgabe;
             this.y = _y;
             this.calcLength();
         }
+        Vector.prototype.scale = function (_timeslice) {
+            throw new Error("Method not implemented.");
+        };
+        Vector.prototype.copy = function () {
+            throw new Error("Method not implemented.");
+        };
         Vector.getRandom = function (_min, _max) {
             var tempVector = new Vector(0, 0);
             tempVector.set(_min + Math.random() * (_max - _min), _min + Math.random() * (_max - _min));

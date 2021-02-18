@@ -1,5 +1,12 @@
 namespace endabgabe {
     export class Vector {
+        scale(_timeslice: number) {
+            throw new Error("Method not implemented.");
+        }
+        copy(): Vector {
+            throw new Error("Method not implemented.");
+        }
+        
         public x: number;
         public y: number;
         public length: number;
